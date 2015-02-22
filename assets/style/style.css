@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Tauri|Oxygen+Mono);
-/* line 21, content/assets/style/stylesheet.scss */
+/* line 14, content/assets/style/stylesheet.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -50,7 +50,7 @@ caption, th, td {
   font-weight: normal;
 }
 
-/* line 54, content/assets/style/stylesheet.scss */
+/* line 53, content/assets/style/stylesheet.scss */
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: "";
@@ -74,14 +74,9 @@ img {
   height: auto;
 }
 
-/* line 61, /Users/computer/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
-* html {
-  font-size: 87.5%;
-}
-
-/* line 64, /Users/computer/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 106, /Users/computer/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
-  font-size: 14px;
+  font-size: 87.5%;
   line-height: 1.5em;
 }
 
@@ -98,7 +93,7 @@ html {
   margin-top: 10.5px;
   margin-bottom: 10.5px;
 }
-/* line 38, /Users/computer/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, /Users/computer/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 #everything:after {
   content: "";
   display: table;
@@ -230,7 +225,7 @@ pre .line-numbers {
 blockquote {
   margin-top: 1.125em;
   background: #eee;
-  color: #444444;
+  color: #444;
   padding: 0 21px 10.5px 21px;
 }
 

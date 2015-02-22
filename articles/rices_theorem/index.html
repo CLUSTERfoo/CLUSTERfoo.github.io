@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/assets/style/style.css">
     <link href="atom.xml" type="application/atom+xml" rel="alternate" title="Atom Feed">
     <!-- you don't need to keep this, but it's cool for stats! -->
-    <meta name="generator" content="nanoc 3.6.7">
+    <meta name="generator" content="nanoc 3.6.11">
     <!-- MathJax for displaying math -->
     <script type="text/javascript"
       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -19,6 +19,13 @@
       });
     </script>
     <!-- END MathJax Settings -->
+    <!-- START turn of caching -->
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <!-- END turn of caching -->
     <!-- START Google Analytics -->
     <script type="text/javascript">
       var _gaq = _gaq || [];
@@ -58,24 +65,32 @@ render if you are on RSS or email.</em></p>
 
 <p>Before we prove the theorem, let’s break down that statement:</p>
 
-<hr><h4 id="semantic-property">“Semantic Property”</h4>
+<hr>
+
+<h4 id="semantic-property">“Semantic Property”</h4>
 
 <p>A semantic property is a property of
 the language, <em>not the machine that is computing
 it</em>. For example, this is a semantic property of a language:</p>
 
 <ul>
-<li>All strings in language <script type="math/tex">L</script> are of the form <script type="math/tex">1^n0^n</script>.</li>
-</ul><p>This is not a semantic property:</p>
+  <li>All strings in language <script type="math/tex">L</script> are of the form <script type="math/tex">1^n0^n</script>.</li>
+</ul>
+
+<p>This is not a semantic property:</p>
 
 <ul>
-<li>It takes my program <script type="math/tex">n</script> steps to generate the first 100 strings in <script type="math/tex">L</script>.</li>
-</ul><p>Note the importance of differentiating between a semantic property
+  <li>It takes my program <script type="math/tex">n</script> steps to generate the first 100 strings in <script type="math/tex">L</script>.</li>
+</ul>
+
+<p>Note the importance of differentiating between a semantic property
 and not:</p>
 
 <ul>
-<li>The halting problem is actually decidable for <a href="https://en.wikipedia.org/wiki/Linear_bounded_automaton">Linear Bouned Automata</a>.</li>
-</ul><h4 id="non-trivial">“Non-Trivial”</h4>
+  <li>The halting problem is actually decidable for <a href="https://en.wikipedia.org/wiki/Linear_bounded_automaton">Linear Bouned Automata</a>.</li>
+</ul>
+
+<h4 id="non-trivial">“Non-Trivial”</h4>
 
 <p>A trivial property is a property that either all languages have or no language
 has. A non-trivial property is everything else.</p>
@@ -102,10 +117,12 @@ recognize it. For example, the following program reconizes <script type="math/te
 (the language made up of only the string “342”):</p>
 
 <ol>
-<li>Read input.</li>
+  <li>Read input.</li>
   <li>If input == “342” print “accept”.</li>
   <li>Else return to step 1.</li>
-</ol><p>This program <em>recognizes</em> <script type="math/tex">L</script>, but it does not <em>decide</em> <script type="math/tex">L</script>: if the input is
+</ol>
+
+<p>This program <em>recognizes</em> <script type="math/tex">L</script>, but it does not <em>decide</em> <script type="math/tex">L</script>: if the input is
 in <script type="math/tex">L</script>, it accepts, but if it’s not, then it will run forever, and you will
 never know whether the input was not in <script type="math/tex">L</script> or the program is just taking a
 long time.</p>
@@ -114,10 +131,14 @@ long time.</p>
 decidable languages are also recognizable. Here is a program that decides <script type="math/tex">L</script>:</p>
 
 <ol>
-<li>Read input.</li>
+  <li>Read input.</li>
   <li>If input == “342” print “accept”.</li>
   <li>Else print “input rejected”.</li>
-</ol><hr><h3 id="the-halting-problem">The Halting Problem</h3>
+</ol>
+
+<hr>
+
+<h3 id="the-halting-problem">The Halting Problem</h3>
 
 <p>Take the following language:</p>
 
@@ -135,7 +156,9 @@ whether an algorithm halts.</p>
 
 <p>With this in mind, we can finally prove Rice’s theorem:</p>
 
-<hr><h3 id="rices-theorem">Rice’s Theorem</h3>
+<hr>
+
+<h3 id="rices-theorem">Rice’s Theorem</h3>
 
 <p>Recall the theorem:</p>
 
@@ -159,7 +182,9 @@ input another program <script type="math/tex">M</script> and decides whether the
 regular (that is, if <script type="math/tex">M</script> can be simplified and represented as a finite
 automation).</p>
 
-<hr><h3 id="proof">Proof</h3>
+<hr>
+
+<h3 id="proof">Proof</h3>
 
 <p>We can prove Rice’s theorem by contradiction. We will show that <strong>if</strong>
 <script type="math/tex">P_{ TM }</script> is decidable <strong>then</strong> so is <script type="math/tex">HALT_{ TM }</script>.
@@ -179,19 +204,23 @@ that takes <script type="math/tex">x</script> as its input and does the followin
 <p><strong><script type="math/tex">M_w</script>:</strong></p>
 
 <ol>
-<li>Run <script type="math/tex">M</script> on input <script type="math/tex">w</script>. If <script type="math/tex">M</script> halts, move on to step 2.</li>
+  <li>Run <script type="math/tex">M</script> on input <script type="math/tex">w</script>. If <script type="math/tex">M</script> halts, move on to step 2.</li>
   <li>Run <script type="math/tex">T</script> on <script type="math/tex">x</script>. Accept if <script type="math/tex">T</script> accepts, and reject if <script type="math/tex">T</script> rejects.</li>
-</ol><p>Here’s the clever part. <em>We don’t actually have to run <script type="math/tex">M_w</script></em>:</p>
+</ol>
+
+<p>Here’s the clever part. <em>We don’t actually have to run <script type="math/tex">M_w</script></em>:</p>
 
 <p>All we need to know is that, if we <em>were</em> to run <script type="math/tex">M_w</script>, there are two possible
 outcomes:</p>
 
 <ul>
-<li>
+  <li>
 <script type="math/tex">M</script> halts on input <script type="math/tex">w</script>, in which case <script type="math/tex">M_w</script> reaches step 2.</li>
   <li>
 <script type="math/tex">M</script> never halts and never reaches step 2.</li>
-</ul><p>But note that, if <script type="math/tex">M</script> halts on <script type="math/tex">w</script>, then step 2 is simply to run <script type="math/tex">T</script>, which
+</ul>
+
+<p>But note that, if <script type="math/tex">M</script> halts on <script type="math/tex">w</script>, then step 2 is simply to run <script type="math/tex">T</script>, which
 means that <strong>when <script type="math/tex">M</script> halts on <script type="math/tex">w</script>, <script type="math/tex">\langle M_w \rangle</script> is in <script type="math/tex">P_{ TM }</script>.</strong></p>
 
 <p>So, if we were to run <script type="math/tex">R</script> with input <script type="math/tex">\langle M_w \rangle</script>,
@@ -200,6 +229,7 @@ turn would tell us if <script type="math/tex">M</script> halts on <script type="
 
 <p>But this would mean that we
 could solve the halting problem, which we know  is not possible.</p>
+
 </article>
 <!-- AddThis Button BEGIN -->
 <br>
@@ -239,10 +269,12 @@ could solve the halting problem, which we know  is not possible.</p>
   <nav id="main-menu">
     <ul>
       <li><a href="/" title="Homepage">Home</a>
-      <li><a href="/all-articles">All Articles</a>
+      <li><a href="/technical-articles">Technical Articles</a>
+      <li><a href="/writings-and-poems">Writings And Poems</a>
+      <li><a href="/doodles">Doodles</a>
       <li><a href="/links">Check it Out!</a>
       <li><a href="http://github.com/clusterfoo" title="My code on github"
-        target="_blank">My Github</a>
+             target="_blank">My Github</a>
       <li><a href="/me/about" title="About Me">About Me</a>
       <li><a href="/contact" title="Contact Me">Contact Me</a>
     </ul>
@@ -270,7 +302,7 @@ could solve the halting problem, which we know  is not possible.</p>
 
       </aside>
       <footer>
-        &copy; 2014 Noam Gagliardi Rabinovich
+        &copy; 2015 Noam Gagliardi Rabinovich
       </footer>
     </div>
   </body>

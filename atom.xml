@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://clusterfoo.com/</id>
   <title>CLUSTERfoo.com</title>
-  <updated>2014-08-04T04:00:00Z</updated>
+  <updated>2015-02-22T05:00:00Z</updated>
   <link rel="alternate" href="http://clusterfoo.com/"/>
   <link rel="self" href="http://clusterfoo.com/atom.xml"/>
   <author>
@@ -10,11 +10,30 @@
     <uri>http://CLUSTERfoo.com</uri>
   </author>
   <entry>
-    <id>tag:clusterfoo.com,2014-08-04:/articles/javascript_traits/</id>
+    <id>tag:clusterfoo.com,2015-02-22:/writings/stones/</id>
+    <title type="html">Stones</title>
+    <published>2015-02-22T05:00:00Z</published>
+    <updated>2015-02-22T05:00:00Z</updated>
+    <link rel="alternate" href="http://clusterfoo.com/writings/stones/"/>
+    <content type="html">&lt;p&gt;I was at the lake last Summer; I sat at an old bench while two men threw stones
+into the water. They would argue over whose stone made the bigger splash.
+This went on for almost an hour. They would try every which angle, and then
+bicker about whose throw spattered out the widest, or which sent the water
+flying the highest, and how could they agree on what they’d seen if in a moment
+it was gone? Finally they approached me hoping I would settle their dispute,
+but I had not seen the water splash– they both scoffed, frustrated, and went
+on their way, and I was free to continue watching the intricate ripples that now
+adorned the surface of the lake.&lt;/p&gt;
+
+&lt;p&gt;&lt;small&gt;&amp;lt;Feb 2015&amp;gt;&lt;/small&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:clusterfoo.com,2014-08-04:/quick-guides/javascript_traits/</id>
     <title type="html">A Simple Implementation of Trait Mixins for Javascript</title>
     <published>2014-08-04T04:00:00Z</published>
     <updated>2014-08-04T04:00:00Z</updated>
-    <link rel="alternate" href="http://clusterfoo.com/articles/javascript_traits/"/>
+    <link rel="alternate" href="http://clusterfoo.com/quick-guides/javascript_traits/"/>
     <content type="html">&lt;p&gt;The method I use
 in development is a bit different from what I wrote here for brevity’s sake, 
 since it allows for inheritance among traits,
@@ -22,7 +41,7 @@ and includes various checks to avoid clashes; but the concept is the same.&lt;/p
 
 &lt;p&gt;The basic idea is to make constructors “traitable”:&lt;/p&gt;
 
-&lt;div&gt;
+&lt;div class="highlighter-coderay"&gt;
 &lt;div class="CodeRay"&gt;
   &lt;div class="code"&gt;&lt;pre&gt;&lt;span class="line-numbers"&gt; &lt;a href="#n1" name="n1"&gt;1&lt;/a&gt;&lt;/span&gt;&lt;span style="color:#777"&gt;/**&lt;/span&gt;
 &lt;span class="line-numbers"&gt; &lt;a href="#n2" name="n2"&gt;2&lt;/a&gt;&lt;/span&gt;&lt;span style="color:#777"&gt; * Traitable constructors all respond to a common API.&lt;/span&gt;
@@ -50,7 +69,7 @@ and includes various checks to avoid clashes; but the concept is the same.&lt;/p
 
 &lt;p&gt;Now making a constructor traitable is just a matter of calling the mixin:&lt;/p&gt;
 
-&lt;div&gt;
+&lt;div class="highlighter-coderay"&gt;
 &lt;div class="CodeRay"&gt;
   &lt;div class="code"&gt;&lt;pre&gt;&lt;span class="line-numbers"&gt;&lt;a href="#n1" name="n1"&gt;1&lt;/a&gt;&lt;/span&gt;&lt;span style="color:#080;font-weight:bold"&gt;function&lt;/span&gt; &lt;span style="color:#06B;font-weight:bold"&gt;Dude&lt;/span&gt;() {
 &lt;span class="line-numbers"&gt;&lt;a href="#n2" name="n2"&gt;2&lt;/a&gt;&lt;/span&gt;  makeTraitable(&lt;span style="color:#950"&gt;this&lt;/span&gt;, Dude);
@@ -61,7 +80,7 @@ and includes various checks to avoid clashes; but the concept is the same.&lt;/p
 
 &lt;p&gt;And we can write our first trait:&lt;/p&gt;
 
-&lt;div&gt;
+&lt;div class="highlighter-coderay"&gt;
 &lt;div class="CodeRay"&gt;
   &lt;div class="code"&gt;&lt;pre&gt;&lt;span class="line-numbers"&gt; &lt;a href="#n1" name="n1"&gt;1&lt;/a&gt;&lt;/span&gt;&lt;span style="color:#080;font-weight:bold"&gt;function&lt;/span&gt; &lt;span style="color:#06B;font-weight:bold"&gt;Moveable&lt;/span&gt;(_constructor, initialX, initialY) {
 &lt;span class="line-numbers"&gt; &lt;a href="#n2" name="n2"&gt;2&lt;/a&gt;&lt;/span&gt;    _constructor.prototype._registerTrait(&lt;span style="background-color:hsla(0,100%,50%,0.05)"&gt;&lt;span style="color:#710"&gt;"&lt;/span&gt;&lt;span style="color:#D20"&gt;Moveable&lt;/span&gt;&lt;span style="color:#710"&gt;"&lt;/span&gt;&lt;/span&gt;);
@@ -79,7 +98,7 @@ and includes various checks to avoid clashes; but the concept is the same.&lt;/p
 
 &lt;p&gt;That’s all there is to it!&lt;/p&gt;
 
-&lt;div&gt;
+&lt;div class="highlighter-coderay"&gt;
 &lt;div class="CodeRay"&gt;
   &lt;div class="code"&gt;&lt;pre&gt;&lt;span class="line-numbers"&gt; &lt;a href="#n1" name="n1"&gt;1&lt;/a&gt;&lt;/span&gt;&lt;span style="color:#777"&gt;/**&lt;/span&gt;
 &lt;span class="line-numbers"&gt; &lt;a href="#n2" name="n2"&gt;2&lt;/a&gt;&lt;/span&gt;&lt;span style="color:#777"&gt; * Our new dude will respond to the same predictable&lt;/span&gt;
@@ -107,7 +126,7 @@ and includes various checks to avoid clashes; but the concept is the same.&lt;/p
 
 &lt;p&gt;Usage:&lt;/p&gt;
 
-&lt;div&gt;
+&lt;div class="highlighter-coderay"&gt;
 &lt;div class="CodeRay"&gt;
   &lt;div class="code"&gt;&lt;pre&gt;&lt;span class="line-numbers"&gt; &lt;a href="#n1" name="n1"&gt;1&lt;/a&gt;&lt;/span&gt;ted = &lt;span style="color:#080;font-weight:bold"&gt;new&lt;/span&gt; Dude(&lt;span style="color:#00D"&gt;0&lt;/span&gt;,&lt;span style="color:#00D"&gt;0&lt;/span&gt;);
 &lt;span class="line-numbers"&gt; &lt;a href="#n2" name="n2"&gt;2&lt;/a&gt;&lt;/span&gt; 
@@ -129,7 +148,7 @@ and includes various checks to avoid clashes; but the concept is the same.&lt;/p
 
 &lt;p&gt;This lends itself well to manipulating application objects with functional logic:&lt;/p&gt;
 
-&lt;div&gt;
+&lt;div class="highlighter-coderay"&gt;
 &lt;div class="CodeRay"&gt;
   &lt;div class="code"&gt;&lt;pre&gt;&lt;span class="line-numbers"&gt;&lt;a href="#n1" name="n1"&gt;1&lt;/a&gt;&lt;/span&gt;_.zipWith(move, moevables, directions);
 &lt;span class="line-numbers"&gt;&lt;a href="#n2" name="n2"&gt;2&lt;/a&gt;&lt;/span&gt;
@@ -142,7 +161,8 @@ and includes various checks to avoid clashes; but the concept is the same.&lt;/p
 
 &lt;p&gt;It’s also less prone to unexpected behavior.
 I can confidently register new objects, mix or remove traits, and not fear the
-application will break.&lt;/p&gt;</content>
+application will break.&lt;/p&gt;
+</content>
   </entry>
   <entry>
     <id>tag:clusterfoo.com,2014-01-27:/articles/eigengoogle/</id>
@@ -271,7 +291,7 @@ Thus, the state vector at month &lt;script type="math/tex"&gt;k&lt;/script&gt; c
 after a year, and then again after two years
 (using the &lt;a href="http://www.sagemath.org/"&gt;Sage&lt;/a&gt; mathematical library for python):&lt;/p&gt;
 
-&lt;div&gt;
+&lt;div class="highlighter-coderay"&gt;
 &lt;div class="CodeRay"&gt;
   &lt;div class="code"&gt;&lt;pre&gt;&lt;span class="line-numbers"&gt;&lt;a href="#n1" name="n1"&gt;1&lt;/a&gt;&lt;/span&gt;P = Matrix([[&lt;span style="color:#60E"&gt;0.70&lt;/span&gt;, &lt;span style="color:#60E"&gt;0.60&lt;/span&gt;],
 &lt;span class="line-numbers"&gt;&lt;a href="#n2" name="n2"&gt;2&lt;/a&gt;&lt;/span&gt;            [&lt;span style="color:#60E"&gt;0.30&lt;/span&gt;, &lt;span style="color:#60E"&gt;0.40&lt;/span&gt;]])
@@ -337,7 +357,7 @@ special case &lt;span class="mj"&gt;EQ&lt;/span&gt;&lt;script type="math/tex"&gt
 &lt;p&gt;First, it should be noted that power iteration has its limitations:
 not all stochastic matrices converge. Take as an example:&lt;/p&gt;
 
-&lt;div&gt;
+&lt;div class="highlighter-coderay"&gt;
 &lt;div class="CodeRay"&gt;
   &lt;div class="code"&gt;&lt;pre&gt;&lt;span class="line-numbers"&gt; &lt;a href="#n1" name="n1"&gt;1&lt;/a&gt;&lt;/span&gt;P = Matrix([ [&lt;span style="color:#00D"&gt;0&lt;/span&gt;, &lt;span style="color:#00D"&gt;1&lt;/span&gt;, &lt;span style="color:#00D"&gt;0&lt;/span&gt;],
 &lt;span class="line-numbers"&gt; &lt;a href="#n2" name="n2"&gt;2&lt;/a&gt;&lt;/span&gt;             [&lt;span style="color:#00D"&gt;1&lt;/span&gt;, &lt;span style="color:#00D"&gt;0&lt;/span&gt;, &lt;span style="color:#00D"&gt;0&lt;/span&gt;],
@@ -505,11 +525,13 @@ irreducible, and primitive. Cool.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src="http://clusterfoo.com/assets/images/2014/eigensnotsicles.png" alt="Imgur"&gt;&lt;/p&gt;
 
-&lt;hr&gt;&lt;p&gt;&lt;small&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;small&gt;
 1. Actually, it all started with the &lt;a href="http://en.wikipedia.org/wiki/HITS_algorithm"&gt;HITS algorithm&lt;/a&gt;,
 which PageRank is based off of.
 More details &lt;a href="http://www.math.cornell.edu/~mec/Winter2009/RalucaRemus/Lecture4/lecture4.html"&gt;here&lt;/a&gt;.
-&lt;/small&gt;&lt;/p&gt;</content>
+&lt;/small&gt;&lt;/p&gt;
+</content>
   </entry>
   <entry>
     <id>tag:clusterfoo.com,2014-01-23:/articles/sorting/</id>
@@ -561,11 +583,13 @@ implement.&lt;/p&gt;
 on those cases:&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;A user can post.&lt;/li&gt;
+  &lt;li&gt;A user can post.&lt;/li&gt;
   &lt;li&gt;A user can upvote a post.&lt;/li&gt;
   &lt;li&gt;A user can comment on a post.&lt;/li&gt;
   &lt;li&gt;A user can comment on a comment on a post.&lt;/li&gt;
-&lt;/ol&gt;&lt;p&gt;So what’s a sensible way of sorting posts?&lt;/p&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So what’s a sensible way of sorting posts?&lt;/p&gt;
 
 &lt;p&gt;Right away, we’re dealing with a different problem than Reddit or HN: while
 it makes sense to slowly degrade the score of a post on those sites over time,
@@ -657,7 +681,9 @@ The first thing that comes to mind is the square-root function, which is good en
     \cfrac{ log_{10} (2 + u + 2c + 3cc) }{ \sqrt{ \bar{t}/60*60*24*10 }}
 &lt;/script&gt;&lt;/p&gt;
 
-&lt;script type="math/tex; mode=display"&gt; \bar{ t } = \cfrac{\sum_{i=1}^3 \left(\frac{1}{2}\right)^{i-1} * (t_i - t_{i-1}) }{ \sum_{i=1}^3  \left(\frac{1}{2}\right)^{i-1}} &lt;/script&gt;&lt;p&gt;If we plot this equation for &lt;code&gt;x = number of points&lt;/code&gt; and &lt;code&gt;y = time&lt;/code&gt;, we can see the
+&lt;script type="math/tex; mode=display"&gt; \bar{ t } = \cfrac{\sum_{i=1}^3 \left(\frac{1}{2}\right)^{i-1} * (t_i - t_{i-1}) }{ \sum_{i=1}^3  \left(\frac{1}{2}\right)^{i-1}} &lt;/script&gt;
+
+&lt;p&gt;If we plot this equation for &lt;code&gt;x = number of points&lt;/code&gt; and &lt;code&gt;y = time&lt;/code&gt;, we can see the
 shape of this function and check for different values if they make sense:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src="http://clusterfoo.com/assets/images/2014/scoring_function_shape_2.jpg" alt="Scoring function 3D plot"&gt;&lt;/p&gt;
@@ -685,7 +711,7 @@ all set up, was rather frustrating because of the poor documentation.&lt;/p&gt;
 &lt;p&gt;For our implementation, we’re using the &lt;code&gt;tire&lt;/code&gt; gem (a wrapper around the
 Elasticsearch API). This is where we call the custom scoring script:&lt;/p&gt;
 
-&lt;div&gt;
+&lt;div class="highlighter-coderay"&gt;
 &lt;div class="CodeRay"&gt;
   &lt;div class="code"&gt;&lt;pre&gt;&lt;span class="line-numbers"&gt;&lt;a href="#n1" name="n1"&gt;1&lt;/a&gt;&lt;/span&gt;query &lt;span style="color:#080;font-weight:bold"&gt;do&lt;/span&gt;
 &lt;span class="line-numbers"&gt;&lt;a href="#n2" name="n2"&gt;2&lt;/a&gt;&lt;/span&gt;  &lt;span style="color:#777"&gt;#custom_score script: "parseInt(doc['upvote_count'].value)", lang: "javascript" do&lt;/span&gt;
@@ -711,7 +737,7 @@ plugin.&lt;/p&gt;
 which we can read using the following shell command &lt;code&gt;tail -f /var/log/elasticsearch/elasticsearch.log&lt;/code&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;div&gt;
+&lt;div class="highlighter-coderay"&gt;
 &lt;div class="CodeRay"&gt;
   &lt;div class="code"&gt;&lt;pre&gt;&lt;span class="line-numbers"&gt; &lt;a href="#n1" name="n1"&gt;1&lt;/a&gt;&lt;/span&gt;&lt;span style="color:#777"&gt;// Logger function:&lt;/span&gt;
 &lt;span class="line-numbers"&gt; &lt;a href="#n2" name="n2"&gt;2&lt;/a&gt;&lt;/span&gt;&lt;span style="color:#080;font-weight:bold"&gt;var&lt;/span&gt; logger = org.elasticsearch.common.logging.Loggers.getLogger(&lt;span style="background-color:hsla(0,100%,50%,0.05)"&gt;&lt;span style="color:#710"&gt;"&lt;/span&gt;&lt;span style="color:#D20"&gt;rails_logger&lt;/span&gt;&lt;span style="color:#710"&gt;"&lt;/span&gt;&lt;/span&gt;);
@@ -774,7 +800,8 @@ which we can read using the following shell command &lt;code&gt;tail -f /var/log
 &lt;span class="line-numbers"&gt;&lt;a href="#n59" name="n59"&gt;59&lt;/a&gt;&lt;/span&gt;score();
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</content>
+&lt;/div&gt;
+</content>
   </entry>
   <entry>
     <id>tag:clusterfoo.com,2013-10-05:/articles/amdahls_law/</id>
@@ -839,7 +866,9 @@ then &lt;script type="math/tex"&gt;1 - P = \frac{ 1 }{ 100 }&lt;/script&gt;.&lt;
 we can expect out of assigning concurrent tasks to &lt;script type="math/tex"&gt;n&lt;/script&gt; parallel processors
 can be represented by the following equation:&lt;/p&gt;
 
-&lt;script type="math/tex; mode=display"&gt;S(n) = \frac{ 1 }{ (1 - P) + \frac{ P }{ n } }&lt;/script&gt;&lt;p&gt;This is, in fact, Amdahl’s equation.&lt;/p&gt;
+&lt;script type="math/tex; mode=display"&gt;S(n) = \frac{ 1 }{ (1 - P) + \frac{ P }{ n } }&lt;/script&gt;
+
+&lt;p&gt;This is, in fact, Amdahl’s equation.&lt;/p&gt;
 
 &lt;p&gt;Uh-oh… do you see it? As we add more and more processors to our computer, and
 &lt;script type="math/tex"&gt;n \to \infty&lt;/script&gt;, we are left with &lt;script type="math/tex"&gt; S =  \frac{ 1 }{ 1 - p } &lt;/script&gt;.&lt;/p&gt;
@@ -868,7 +897,8 @@ your machine is capable of!&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Final Note:&lt;/strong&gt; In fact, Amdahl’s Law is not exclusive to concurrency, but
 applies to &lt;em&gt;any&lt;/em&gt; speed-boosting strategy that only affects
-some portion of a program.&lt;/p&gt;</content>
+some portion of a program.&lt;/p&gt;
+</content>
   </entry>
   <entry>
     <id>tag:clusterfoo.com,2013-05-06:/quick-guides/multi-profile-bashrc/</id>
@@ -900,7 +930,8 @@ fi
 &lt;p&gt;You can use this method to run any shell script uniquely on computers
 that contain the &lt;code&gt;.setup_00&lt;/code&gt; file.&lt;/p&gt;
 
-&lt;p&gt;That’s it. It’s not fancy, but it works.&lt;/p&gt;</content>
+&lt;p&gt;That’s it. It’s not fancy, but it works.&lt;/p&gt;
+</content>
   </entry>
   <entry>
     <id>tag:clusterfoo.com,2013-04-16:/articles/rices_theorem/</id>
@@ -921,24 +952,32 @@ render if you are on RSS or email.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Before we prove the theorem, let’s break down that statement:&lt;/p&gt;
 
-&lt;hr&gt;&lt;h4 id="semantic-property"&gt;“Semantic Property”&lt;/h4&gt;
+&lt;hr&gt;
+
+&lt;h4 id="semantic-property"&gt;“Semantic Property”&lt;/h4&gt;
 
 &lt;p&gt;A semantic property is a property of
 the language, &lt;em&gt;not the machine that is computing
 it&lt;/em&gt;. For example, this is a semantic property of a language:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;All strings in language &lt;script type="math/tex"&gt;L&lt;/script&gt; are of the form &lt;script type="math/tex"&gt;1^n0^n&lt;/script&gt;.&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;This is not a semantic property:&lt;/p&gt;
+  &lt;li&gt;All strings in language &lt;script type="math/tex"&gt;L&lt;/script&gt; are of the form &lt;script type="math/tex"&gt;1^n0^n&lt;/script&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This is not a semantic property:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;It takes my program &lt;script type="math/tex"&gt;n&lt;/script&gt; steps to generate the first 100 strings in &lt;script type="math/tex"&gt;L&lt;/script&gt;.&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;Note the importance of differentiating between a semantic property
+  &lt;li&gt;It takes my program &lt;script type="math/tex"&gt;n&lt;/script&gt; steps to generate the first 100 strings in &lt;script type="math/tex"&gt;L&lt;/script&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note the importance of differentiating between a semantic property
 and not:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;The halting problem is actually decidable for &lt;a href="https://en.wikipedia.org/wiki/Linear_bounded_automaton"&gt;Linear Bouned Automata&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;&lt;h4 id="non-trivial"&gt;“Non-Trivial”&lt;/h4&gt;
+  &lt;li&gt;The halting problem is actually decidable for &lt;a href="https://en.wikipedia.org/wiki/Linear_bounded_automaton"&gt;Linear Bouned Automata&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="non-trivial"&gt;“Non-Trivial”&lt;/h4&gt;
 
 &lt;p&gt;A trivial property is a property that either all languages have or no language
 has. A non-trivial property is everything else.&lt;/p&gt;
@@ -965,10 +1004,12 @@ recognize it. For example, the following program reconizes &lt;script type="math
 (the language made up of only the string “342”):&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;Read input.&lt;/li&gt;
+  &lt;li&gt;Read input.&lt;/li&gt;
   &lt;li&gt;If input == “342” print “accept”.&lt;/li&gt;
   &lt;li&gt;Else return to step 1.&lt;/li&gt;
-&lt;/ol&gt;&lt;p&gt;This program &lt;em&gt;recognizes&lt;/em&gt; &lt;script type="math/tex"&gt;L&lt;/script&gt;, but it does not &lt;em&gt;decide&lt;/em&gt; &lt;script type="math/tex"&gt;L&lt;/script&gt;: if the input is
+&lt;/ol&gt;
+
+&lt;p&gt;This program &lt;em&gt;recognizes&lt;/em&gt; &lt;script type="math/tex"&gt;L&lt;/script&gt;, but it does not &lt;em&gt;decide&lt;/em&gt; &lt;script type="math/tex"&gt;L&lt;/script&gt;: if the input is
 in &lt;script type="math/tex"&gt;L&lt;/script&gt;, it accepts, but if it’s not, then it will run forever, and you will
 never know whether the input was not in &lt;script type="math/tex"&gt;L&lt;/script&gt; or the program is just taking a
 long time.&lt;/p&gt;
@@ -977,10 +1018,14 @@ long time.&lt;/p&gt;
 decidable languages are also recognizable. Here is a program that decides &lt;script type="math/tex"&gt;L&lt;/script&gt;:&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;Read input.&lt;/li&gt;
+  &lt;li&gt;Read input.&lt;/li&gt;
   &lt;li&gt;If input == “342” print “accept”.&lt;/li&gt;
   &lt;li&gt;Else print “input rejected”.&lt;/li&gt;
-&lt;/ol&gt;&lt;hr&gt;&lt;h3 id="the-halting-problem"&gt;The Halting Problem&lt;/h3&gt;
+&lt;/ol&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="the-halting-problem"&gt;The Halting Problem&lt;/h3&gt;
 
 &lt;p&gt;Take the following language:&lt;/p&gt;
 
@@ -998,7 +1043,9 @@ whether an algorithm halts.&lt;/p&gt;
 
 &lt;p&gt;With this in mind, we can finally prove Rice’s theorem:&lt;/p&gt;
 
-&lt;hr&gt;&lt;h3 id="rices-theorem"&gt;Rice’s Theorem&lt;/h3&gt;
+&lt;hr&gt;
+
+&lt;h3 id="rices-theorem"&gt;Rice’s Theorem&lt;/h3&gt;
 
 &lt;p&gt;Recall the theorem:&lt;/p&gt;
 
@@ -1022,7 +1069,9 @@ input another program &lt;script type="math/tex"&gt;M&lt;/script&gt; and decides
 regular (that is, if &lt;script type="math/tex"&gt;M&lt;/script&gt; can be simplified and represented as a finite
 automation).&lt;/p&gt;
 
-&lt;hr&gt;&lt;h3 id="proof"&gt;Proof&lt;/h3&gt;
+&lt;hr&gt;
+
+&lt;h3 id="proof"&gt;Proof&lt;/h3&gt;
 
 &lt;p&gt;We can prove Rice’s theorem by contradiction. We will show that &lt;strong&gt;if&lt;/strong&gt;
 &lt;script type="math/tex"&gt;P_{ TM }&lt;/script&gt; is decidable &lt;strong&gt;then&lt;/strong&gt; so is &lt;script type="math/tex"&gt;HALT_{ TM }&lt;/script&gt;.
@@ -1042,19 +1091,23 @@ that takes &lt;script type="math/tex"&gt;x&lt;/script&gt; as its input and does 
 &lt;p&gt;&lt;strong&gt;&lt;script type="math/tex"&gt;M_w&lt;/script&gt;:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;Run &lt;script type="math/tex"&gt;M&lt;/script&gt; on input &lt;script type="math/tex"&gt;w&lt;/script&gt;. If &lt;script type="math/tex"&gt;M&lt;/script&gt; halts, move on to step 2.&lt;/li&gt;
+  &lt;li&gt;Run &lt;script type="math/tex"&gt;M&lt;/script&gt; on input &lt;script type="math/tex"&gt;w&lt;/script&gt;. If &lt;script type="math/tex"&gt;M&lt;/script&gt; halts, move on to step 2.&lt;/li&gt;
   &lt;li&gt;Run &lt;script type="math/tex"&gt;T&lt;/script&gt; on &lt;script type="math/tex"&gt;x&lt;/script&gt;. Accept if &lt;script type="math/tex"&gt;T&lt;/script&gt; accepts, and reject if &lt;script type="math/tex"&gt;T&lt;/script&gt; rejects.&lt;/li&gt;
-&lt;/ol&gt;&lt;p&gt;Here’s the clever part. &lt;em&gt;We don’t actually have to run &lt;script type="math/tex"&gt;M_w&lt;/script&gt;&lt;/em&gt;:&lt;/p&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Here’s the clever part. &lt;em&gt;We don’t actually have to run &lt;script type="math/tex"&gt;M_w&lt;/script&gt;&lt;/em&gt;:&lt;/p&gt;
 
 &lt;p&gt;All we need to know is that, if we &lt;em&gt;were&lt;/em&gt; to run &lt;script type="math/tex"&gt;M_w&lt;/script&gt;, there are two possible
 outcomes:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;
+  &lt;li&gt;
 &lt;script type="math/tex"&gt;M&lt;/script&gt; halts on input &lt;script type="math/tex"&gt;w&lt;/script&gt;, in which case &lt;script type="math/tex"&gt;M_w&lt;/script&gt; reaches step 2.&lt;/li&gt;
   &lt;li&gt;
 &lt;script type="math/tex"&gt;M&lt;/script&gt; never halts and never reaches step 2.&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;But note that, if &lt;script type="math/tex"&gt;M&lt;/script&gt; halts on &lt;script type="math/tex"&gt;w&lt;/script&gt;, then step 2 is simply to run &lt;script type="math/tex"&gt;T&lt;/script&gt;, which
+&lt;/ul&gt;
+
+&lt;p&gt;But note that, if &lt;script type="math/tex"&gt;M&lt;/script&gt; halts on &lt;script type="math/tex"&gt;w&lt;/script&gt;, then step 2 is simply to run &lt;script type="math/tex"&gt;T&lt;/script&gt;, which
 means that &lt;strong&gt;when &lt;script type="math/tex"&gt;M&lt;/script&gt; halts on &lt;script type="math/tex"&gt;w&lt;/script&gt;, &lt;script type="math/tex"&gt;\langle M_w \rangle&lt;/script&gt; is in &lt;script type="math/tex"&gt;P_{ TM }&lt;/script&gt;.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;So, if we were to run &lt;script type="math/tex"&gt;R&lt;/script&gt; with input &lt;script type="math/tex"&gt;\langle M_w \rangle&lt;/script&gt;,
@@ -1062,7 +1115,8 @@ it would be able to tell us whether it is in &lt;script type="math/tex"&gt;P_{ T
 turn would tell us if &lt;script type="math/tex"&gt;M&lt;/script&gt; halts on &lt;script type="math/tex"&gt;w&lt;/script&gt;.&lt;/p&gt;
 
 &lt;p&gt;But this would mean that we
-could solve the halting problem, which we know  is not possible.&lt;/p&gt;</content>
+could solve the halting problem, which we know  is not possible.&lt;/p&gt;
+</content>
   </entry>
   <entry>
     <id>tag:clusterfoo.com,2013-03-27:/articles/ruby_fizzbuzz_by_exhaustion/</id>
@@ -1083,7 +1137,7 @@ which terms to include, it uses &lt;code&gt;unless&lt;/code&gt;-statements to lo
 to exclude (until all possibilities are exhausted, in which case it just
 gives up and says “Let’s just assume it’s ‘Buzz’”).&lt;/p&gt;
 
-&lt;div&gt;
+&lt;div class="highlighter-coderay"&gt;
 &lt;div class="CodeRay"&gt;
   &lt;div class="code"&gt;&lt;pre&gt;&lt;span class="line-numbers"&gt;&lt;a href="#n1" name="n1"&gt;1&lt;/a&gt;&lt;/span&gt;(&lt;span style="color:#00D"&gt;1&lt;/span&gt;..&lt;span style="color:#00D"&gt;100&lt;/span&gt;).each &lt;span style="color:#080;font-weight:bold"&gt;do&lt;/span&gt; |n|
 &lt;span class="line-numbers"&gt;&lt;a href="#n2" name="n2"&gt;2&lt;/a&gt;&lt;/span&gt;  (puts n.to_s; &lt;span style="color:#080;font-weight:bold"&gt;next&lt;/span&gt;) &lt;span style="color:#080;font-weight:bold"&gt;unless&lt;/span&gt; (n % &lt;span style="color:#00D"&gt;3&lt;/span&gt; == &lt;span style="color:#00D"&gt;0&lt;/span&gt;) &lt;span style="color:#080;font-weight:bold"&gt;or&lt;/span&gt; (n % &lt;span style="color:#00D"&gt;5&lt;/span&gt; == &lt;span style="color:#00D"&gt;0&lt;/span&gt;)
@@ -1093,7 +1147,8 @@ gives up and says “Let’s just assume it’s ‘Buzz’”).&lt;/p&gt;
 &lt;span class="line-numbers"&gt;&lt;a href="#n6" name="n6"&gt;6&lt;/a&gt;&lt;/span&gt;&lt;span style="color:#080;font-weight:bold"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</content>
+&lt;/div&gt;
+</content>
   </entry>
   <entry>
     <id>tag:clusterfoo.com,2013-03-08:/quick-guides/rsync-over-ssh/</id>
@@ -1128,7 +1183,7 @@ a small shared server at &lt;a href="http://asmallorange.com"&gt;A Small Ornage&
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
-&lt;li&gt;
+  &lt;li&gt;
 &lt;code&gt;-a&lt;/code&gt;: Archive mode. The most common option for syncing directories.&lt;/li&gt;
   &lt;li&gt;
 &lt;code&gt;-v&lt;/code&gt;: Verbose mode.&lt;/li&gt;
@@ -1142,7 +1197,9 @@ a small shared server at &lt;a href="http://asmallorange.com"&gt;A Small Ornage&
 &lt;code&gt;--delete-after&lt;/code&gt;: Sync new and updated files, and wait until transfer is
 complete before deleting any superfluous files. This is important when deploying
 a website, since otherwise a visitor might stumble upon missing pages.&lt;/li&gt;
-&lt;/ul&gt;&lt;h3 id="always-dry-run-first"&gt;Always Dry-Run First!&lt;/h3&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="always-dry-run-first"&gt;Always Dry-Run First!&lt;/h3&gt;
 
 &lt;p&gt;It’s easy to make mistakes with rsync. A simple typo like &lt;code&gt;dir&lt;/code&gt; instead of
 &lt;code&gt;dir/&lt;/code&gt; can mean a world of difference (and a world of pain if you accidentally
@@ -1150,7 +1207,8 @@ a website, since otherwise a visitor might stumble upon missing pages.&lt;/li&gt
 
 &lt;p&gt;I always do a dry-run before I use an rsync command for the first time. The
 dry-run option (&lt;code&gt;-n&lt;/code&gt;) will show you the final output of the operation,
-without actually running through it.&lt;/p&gt;</content>
+without actually running through it.&lt;/p&gt;
+</content>
   </entry>
   <entry>
     <id>tag:clusterfoo.com,2013-02-28:/quick-guides/screencasting-in-linux/</id>
@@ -1165,7 +1223,7 @@ without actually running through it.&lt;/p&gt;</content>
 &lt;h3 id="tools-used"&gt;Tools used&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;
+  &lt;li&gt;
     &lt;p&gt;arandr (easily manage your screens and their resolution)&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
@@ -1186,7 +1244,9 @@ without actually running through it.&lt;/p&gt;</content>
   &lt;li&gt;
     &lt;p&gt;openshot (edit and export final video)&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;&lt;h3 id="preparation"&gt;Preparation&lt;/h3&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="preparation"&gt;Preparation&lt;/h3&gt;
 
 &lt;p&gt;Using arandr, change screen resolution to 1280x720 (720p) and switch to
 a large terminal font.&lt;/p&gt;
@@ -1202,7 +1262,8 @@ a large terminal font.&lt;/p&gt;
 
 &lt;h3 id="exporting-for-youtube"&gt;Exporting for YouTube&lt;/h3&gt;
 
-&lt;p&gt;I export the file as a 720p flv, using aac for audio codec.&lt;/p&gt;</content>
+&lt;p&gt;I export the file as a 720p flv, using aac for audio codec.&lt;/p&gt;
+</content>
   </entry>
 </feed>
 
